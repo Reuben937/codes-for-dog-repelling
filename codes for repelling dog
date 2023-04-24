@@ -1,0 +1,23 @@
+const int buttonPin = 8;   // button connected to pin 8
+const int buzzerPin = 3;   // buzzer connected to pin 3
+
+void setup() {
+  pinMode(buttonPin, INPUT_PULLUP);  // set button pin as input with pull-up resistor
+  pinMode(buzzerPin, OUTPUT);        // set buzzer pin as output
+}
+
+void loop() {
+  if (digitalRead(buttonPin) == LOW) {    // if button is pressed
+    tone(buzzerPin, 20000);               // generate 20kHz sound on the buzzer
+    delay(10000);                         // wait for 10 seconds
+    noTone(buzzerPin);                    // turn off the buzzer
+    delay(1000);                          // wait for 1 second
+    tone(buzzerPin, 25000);               // generate 25kHz sound on the buzzer
+    delay(10000);                         // wait for 10 seconds
+    noTone(buzzerPin);                    // turn off the buzzer
+    delay(1000);                          // wait for 1 second
+    tone(buzzerPin, 35000);               // generate 35kHz sound on the buzzer
+    delay(10000);                         // wait for 10 seconds
+    noTone(buzzerPin);                    // turn off the buzzer
+  }
+}
